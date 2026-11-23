@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>重力势能探究模拟器 - 结论修正版</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', 'Arial', sans-serif; display: flex; flex-direction: column; align-items: center; background: #eceff1; padding: 10px; margin: 0; }
+        .container { background: white; padding: 16px; border-radius: 15px; box-shadow: 0 10px 40px rgba(0,0,0,0.3); width: 100%; max-width: 980px; }
+        h2 { color: #1a237e; text-align: center; font-size: 1.4rem; margin: 0 0 12px 0; border-bottom: 3px solid #3f51b5; padding-bottom: 8px; }
+        canvas { background: #ffffff; border: 2px solid #263238; border-radius: 8px; display: block; margin: 0 auto; width: 100%; height: auto; }
+        
+        .ui-panel { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding: 14px; background: #f1f8e9; border: 2px solid #8bc34a; border-radius: 10px; margin-top: 12px; }
+        .control-group { flex: 1 1 200px; display: flex; flex-direction: column; gap: 6px; }
+        label { font-size: 1.1rem; color: #33691e; font-weight: bold; }
+        .value-text { font-size: 1.35rem; color: #e64a19; font-weight: 900; }
+        input[type="range"] { height: 20px; cursor: pointer; width: 100%; }
+        
+        .btn-group { display: flex; gap: 10px; align-items: center; flex: 1 1 220px; }
+        button { flex: 1; padding: 12px 10px; cursor: pointer; border: none; border-radius: 8px; font-weight: bold; font-size: 1.05rem; transition: 0.2s; box-shadow: 0 4px 0 #7f8c8d; }
+        #dropBtn { background: #4caf50; color: white; box-shadow: 0 4px 0 #2e7d32; }
+        #dropBtn:active { transform: translateY(4px); box-shadow: none; }
+        #smoothBtn { background: #ff9800; color: white; box-shadow: 0 4px 0 #ef6c00; }
+
+        .data-cards { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; justify-content: center; }
+        .card { background: #37474f; color: white; flex: 1 1 130px; max-width: 180px; padding: 10px; border-radius: 8px; text-align: center; border: 2px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.2); font-size: 0.9rem; }
+        .card h4 { margin: 0 0 6px 0; color: #81d4fa; font-size: 1rem; }
+        .card p { margin: 3px 0; }
+        .depth-val { font-size: 1.35rem; color: #ffeb3b; font-weight: 900; display: block; margin-top: 4px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>探究：物体重力势能的大小与 m、h 的关系</h2>
+    
+    <canvas id="simCanvas" width="940" height="360"></canvas>
+
+    <div class="ui-panel">
+        <div class="control-group">
+            <label>高度 (h): <span id="hLabel" class="value-text">30</span> cm</label>
+            <input type="range" id="hRange" min="10" max="60" step="1" value="30">
+        </div>
+        <div class="control-group">
+            <label>质量 (m): <span id="mLabel" class="value-text">50</span> g</label>
+            <input type="range" id="mRange" min="20" max="200" step="10" value="50">
+        </div>
+        <div class="btn-group">
+            <button id="dropBtn">释放小球 ▼</button>
+            <button id="smoothBtn">抹平沙子 ↺</button>
+        </div>
+    </div>
+
+    <div class="data-cards" id="dataDisplay">
+        <div class="card" style="opacity:0.2"><p>等待实验...</p></div>
+        <div class="card" style="opacity:0.2"><p>等待实验...</p></div>
+        <div class="card" style="opacity:0.2"><p>等待实验...</p></div>
+        <div class="card" style="opacity:0.2"><p>等待实验...</p></div>
+        <div class="card" style="opacity:0.2"><p>等待实验...</p></div>
+    </div>
+</div>
+
+<script>
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playSound(f, t, d, v) {
+        try {
+            const o = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            o.type = t; o.frequency.value = f;
+            g.gain.setValueAtTime(v, audioCtx.currentTime);
+            g.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + d);
+            o.connect(g); g.connect(audioCtx.destination);
+            o.start(); o.stop(audioCtx.currentTime + d);
+        } catch(e) {}
+    }
+
+    const canvas = document.getElementById('simCanvas');
+    const ctx = canvas.getContext('2d');
+    const SAND_Y = 300;
+    const SCALE = 4.5; // 像素缩放比
+
+    let ball = { x: 470, y: 50, r: 10, m: 50, h: 30, v: 0, state: 'idle' };
+    let pits = []; 
+    let history = [];
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // 1. 沙盘绘制 (增加质感)
+        ctx.fillStyle = '#f7e1b5'; 
+        ctx.fillRect(40, SAND_Y, 860, 60);
+        ctx.strokeStyle = '#8d6e63'; ctx.lineWidth = 4;
+        ctx.strokeRect(40, SAND_Y, 860, 60);
+
+        // 2. 标尺 (保持 0cm 在沙面)
+        ctx.strokeStyle = '#455a64'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(50, SAND_Y); ctx.lineTo(50, 20); ctx.stroke();
+        for(let i=0; i<=70; i+=10) {
+            let y = SAND_Y - i * SCALE;
+            ctx.beginPath(); ctx.moveTo(50, y); ctx.lineTo(65, y); ctx.stroke();
+            ctx.fillStyle = '#455a64'; ctx.font = "bold 14px Arial";
+            ctx.fillText(i + "cm", 70, y + 5);
+        }
+
+        // 3. 绘制沙坑 (深度强化)
+        pits.forEach(p => {
+            ctx.beginPath();
+            // 沙坑深度取决于能量，这里做了显著的视觉拉伸
+            ctx.ellipse(p.x, SAND_Y, p.w, p.d, 0, 0, Math.PI);
+            ctx.fillStyle = '#d7ccc8'; ctx.fill();
+            ctx.strokeStyle = '#5d4037'; ctx.lineWidth = 2; ctx.stroke();
+        });
+
+        // 4. 垂直高度指示 (黄色虚线)
+        if(ball.state === 'idle') {
+            ctx.beginPath(); ctx.moveTo(ball.x, ball.y); ctx.lineTo(ball.x, SAND_Y);
+            ctx.strokeStyle = '#FFD600'; ctx.lineWidth = 3; ctx.setLineDash([8, 4]); ctx.stroke(); ctx.setLineDash([]);
+            ctx.fillStyle = '#000'; ctx.font = "bold 26px Arial";
+            ctx.fillText(`高度 h = ${ball.h} cm`, ball.x + 25, ball.y + (SAND_Y - ball.y)/2);
+        }
+
+        // 5. 小球
+        let ballRadius = 12 + (ball.m / 25); 
+        ctx.beginPath(); ctx.arc(ball.x, ball.y, ballRadius, 0, Math.PI*2);
+        ctx.fillStyle = '#37474f'; ctx.fill(); 
+        ctx.strokeStyle = '#000'; ctx.lineWidth = 2; ctx.stroke();
+
+        if (ball.state === 'falling') update();
+        requestAnimationFrame(draw);
+    }
+
+    function update() {
+        ball.v += 0.5; 
+        ball.y += ball.v;
+
+        if (ball.y >= SAND_Y) {
+            ball.y = SAND_Y;
+            ball.state = 'impact';
+            playSound(100, 'sine', 0.3, 0.5); 
+            
+            // --- 关键算法修正 ---
+            // 势能 Ep = m * g * h
+            // 让深度 d 与 (m * h) 成正比关系，确保质量翻倍或高度翻倍时，深度显著增加
+            let energyFactor = (ball.m * ball.h) / 500; 
+            let impactDepth = 5 + (energyFactor * 2.5); // 基础深度 + 能量加成
+            let impactWidth = 15 + (ball.m / 10) + (impactDepth * 0.5);
+
+            pits.push({ x: ball.x, d: impactDepth * 2, w: impactWidth });
+            
+            // 反应性变数记录 (单位转换为 cm 以符合教学直觉)
+            history.unshift({ 
+                m: ball.m, 
+                h: ball.h, 
+                d: (impactDepth / 3).toFixed(1) 
+            });
+            if(history.length > 5) history.pop();
+            updateHistoryUI();
+            
+            setTimeout(() => {
+                ball.state = 'idle'; 
+                resetBallPosition(); 
+            }, 500);
+        }
+    }
+
+    function updateHistoryUI() {
+        const container = document.getElementById('dataDisplay');
+        container.innerHTML = history.map((data, i) => `
+            <div class="card">
+                <h4>实验记录 ${history.length - i}</h4>
+                <p>质量: ${data.m}g</p>
+                <p>高度: ${data.h}cm</p>
+                <strong>沙坑深度:</strong>
+                <span class="depth-val">${data.d} cm</span>
+            </div>
+        `).join('') + Array(5 - history.length).fill('<div class="card" style="opacity:0.2"><p>等待实验...</p></div>').join('');
+    }
+
+    function resetBallPosition() {
+        ball.v = 0;
+        ball.h = parseInt(document.getElementById('hRange').value);
+        ball.m = parseInt(document.getElementById('mRange').value);
+        ball.y = SAND_Y - ball.h * SCALE;
+        // 自动移动到下一个落点
+        ball.x = 180 + (pits.length * 140) % 650;
+    }
+
+    document.getElementById('hRange').oninput = function() { 
+        document.getElementById('hLabel').innerText = this.value; 
+        if(ball.state === 'idle') resetBallPosition();
+    };
+    document.getElementById('mRange').oninput = function() { 
+        document.getElementById('mLabel').innerText = this.value; 
+        if(ball.state === 'idle') resetBallPosition();
+    };
+    document.getElementById('dropBtn').onclick = () => { 
+        if(ball.state === 'idle') {
+            if(audioCtx.state === 'suspended') audioCtx.resume();
+            ball.state = 'falling';
+        }
+    };
+    document.getElementById('smoothBtn').onclick = () => {
+        pits = []; history = []; updateHistoryUI();
+        playSound(300, 'sine', 0.2, 0.2);
+    };
+
+    resetBallPosition();
+    draw();
+</script>
+</body>
+</html>

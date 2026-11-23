@@ -1,0 +1,351 @@
+{
+  "generator": {
+    "name": "造島工坊 IsleForge",
+    "version": 1,
+    "createdAt": "2026-11-20"
+  },
+  "site": {
+    "title": "能量探索群岛",
+    "slug": "energy-explorer-islands",
+    "tagline": "在岛屿实验与挑战中学会能量、功和功率",
+    "author": "教师",
+    "audience": "初中二年级",
+    "language": "zh-CN",
+    "mascot": {
+      "name": "小亮",
+      "description": "焦耳仔：天蓝色圆形小机器人，胸前有黄色闪电，背着实验工具包。"
+    }
+  },
+  "islandType": {
+    "id": "science",
+    "name": "现象探究岛",
+    "description": "一座島一個觀念步驟，中央是能拉滑桿、開關圖層的互動觀測台，一步步看懂會變化的現象。"
+  },
+  "centerIsland": {
+    "name": "总复习大岛",
+    "role": "互動觀測台",
+    "description": "互動觀測台：可操作的現象模擬（滑桿、圖層開關、播放／暫停），並依序導覽各座島的觀念步驟。"
+  },
+  "extraLabel": "可操作的图层／参数",
+  "islands": [
+    {
+      "order": 1,
+      "id": "island-02",
+      "name": "生活能量岛",
+      "group": "10.1 常见能量",
+      "intro": "从生活物品找出不同形式的能量",
+      "points": [
+        "学习机械能、化学能和电能",
+        "探索生活物品的能量形式",
+        "完成能量分类题"
+      ],
+      "extra": "生活情境、能量形式与说明图层",
+      "link": ""
+    },
+    {
+      "order": 2,
+      "id": "island-03",
+      "name": "机械能实验岛",
+      "group": "10.2 机械能",
+      "intro": "改变条件，发现动能和势能的规律",
+      "points": [
+        "学习动能、重力势能和弹性势能",
+        "控制变量探索机械能及其转化",
+        "完成实验判断题"
+      ],
+      "extra": "质量、释放高度、实验类型、对比记录",
+      "link": ""
+    },
+    {
+      "order": 3,
+      "id": "island-04",
+      "name": "能量守恒岛",
+      "group": "10.3 能量守恒",
+      "intro": "追踪能量的转化与转移",
+      "points": [
+        "学习能量守恒定律",
+        "探索发电与生活中的能量转化",
+        "完成转化流程题"
+      ],
+      "extra": "流程步骤、能量图层、播放／暂停",
+      "link": ""
+    },
+    {
+      "order": 4,
+      "id": "island-05",
+      "name": "功与功率岛",
+      "group": "10.4 功与功率",
+      "intro": "测量做功多少，比较做功快慢",
+      "points": [
+        "学习做功条件及功和功率公式",
+        "探索同功不同时的功率差异",
+        "完成情境判断与计算题"
+      ],
+      "extra": "力、沿力方向的位移、时间、计算图层",
+      "link": ""
+    }
+  ],
+  "theme": {
+    "style": "雲海仙境",
+    "font": "黑體",
+    "primary": "#2f7a6b",
+    "accent": "#d9792f",
+    "backgrounds": [
+      {
+        "name": "夜海",
+        "background": "#16222e",
+        "default": true
+      },
+      {
+        "name": "晨光",
+        "background": "#f6f0e4",
+        "default": false
+      },
+      {
+        "name": "海霧",
+        "background": "#dcebee",
+        "default": false
+      }
+    ],
+    "autoByTime": {
+      "enabled": true,
+      "day": "晨光",
+      "dusk": "海霧",
+      "night": "夜海",
+      "spec": "references/theme.md"
+    }
+  },
+  "features": [
+    {
+      "id": "list",
+      "name": "地點清單",
+      "description": "不用 3D 也能讀完所有內容"
+    },
+    {
+      "id": "progress",
+      "name": "探索進度",
+      "description": "記錄看過哪些島（存在瀏覽器）"
+    },
+    {
+      "id": "quiz",
+      "name": "小測驗",
+      "description": "每座島或中央島的測驗題"
+    },
+    {
+      "id": "reducedMotion",
+      "name": "減少動態",
+      "description": "暫停動畫，保護容易暈眩的人"
+    },
+    {
+      "id": "guidedTour",
+      "name": "自動導覽路線",
+      "description": "按「開始導覽」鏡頭依序飛到每座島並跳出介紹卡，可暫停、上一站、下一站"
+    },
+    {
+      "id": "walkMode",
+      "name": "地面漫遊",
+      "description": "切到第一人稱走在島上與橋上，WASD／方向鍵或畫面方向鍵移動，拖曳環顧"
+    },
+    {
+      "id": "certificate",
+      "name": "完成證書",
+      "description": "全部完成後可下載或列印"
+    },
+    {
+      "id": "saveCode",
+      "name": "接關碼",
+      "description": "換電腦或手機時，用一串代碼接著玩"
+    },
+    {
+      "id": "people",
+      "name": "小人物散步",
+      "description": "島上有小人物沿著道路走動，增加生活感"
+    },
+    {
+      "id": "npcTalk",
+      "name": "居民對話與交易",
+      "description": "點居民會停下來揮手聊天，可以用撿到的東西跟居民交換"
+    },
+    {
+      "id": "skyLife",
+      "name": "天空與海的動態",
+      "description": "雲朵飄移、鳥群飛過、帆船繞島、海浪起伏"
+    },
+    {
+      "id": "dayNight",
+      "name": "晝夜切換",
+      "description": "白天、黃昏、夜晚光線"
+    },
+    {
+      "id": "nightLights",
+      "name": "夜晚燈光",
+      "description": "天黑後路燈、窗戶、市集燈亮起，還有螢火蟲"
+    },
+    {
+      "id": "clock",
+      "name": "即時時鐘",
+      "description": "顯示目前時間與天色"
+    }
+  ],
+  "rpgMode": {
+    "enabled": true,
+    "spec": "references/rpg-mode.md",
+    "npcRole": "實驗助手",
+    "challenge": "觀察與推論三題，可搭配操作模擬後作答",
+    "rules": {
+      "firstVisit": 5,
+      "firstCorrect": 10,
+      "repeatCorrect": 2,
+      "firstClear": 10,
+      "passPerIsland": "2/3",
+      "centerUnlockStamps": 3,
+      "certificateRequiresAllStamps": true
+    }
+  },
+  "livingWorld": {
+    "enabled": true,
+    "spec": "references/living-world.md",
+    "residentsPerIsland": 2,
+    "trade": true,
+    "dayNight": [
+      "day",
+      "dusk",
+      "night",
+      "auto",
+      "realtime"
+    ],
+    "sky": [
+      "clouds",
+      "birds",
+      "boats"
+    ],
+    "nightLights": true
+  },
+  "look": {
+    "spec": "references/look-and-feel.md",
+    "shape": {
+      "id": "float",
+      "name": "浮空群島"
+    },
+    "detail": {
+      "level": 4,
+      "name": "極致",
+      "requirement": "在精緻之上：每島至少 1 個會動的小機關（風車、水車、旗子、噴泉）、地面有色塊拼貼與陰影細節、島底岩層分層；需提供「低畫質」切換並在手機自動降級"
+    },
+    "animals": [
+      {
+        "id": "butterfly",
+        "icon": "🦋",
+        "name": "蝴蝶",
+        "where": "air"
+      },
+      {
+        "id": "cat",
+        "icon": "🐱",
+        "name": "貓咪",
+        "where": "land"
+      },
+      {
+        "id": "cow",
+        "icon": "🐄",
+        "name": "乳牛",
+        "where": "land"
+      },
+      {
+        "id": "dog",
+        "icon": "🐶",
+        "name": "小狗",
+        "where": "land"
+      },
+      {
+        "id": "seal",
+        "icon": "🦭",
+        "name": "海豹",
+        "where": "shore"
+      },
+      {
+        "id": "whale",
+        "icon": "🐋",
+        "name": "鯨魚",
+        "where": "sea"
+      },
+      {
+        "id": "crab",
+        "icon": "🦀",
+        "name": "螃蟹",
+        "where": "shore"
+      },
+      {
+        "id": "deer",
+        "icon": "🦌",
+        "name": "小鹿",
+        "where": "land"
+      }
+    ],
+    "extras": [
+      {
+        "id": "flowers",
+        "name": "花田"
+      },
+      {
+        "id": "windmill",
+        "name": "風車"
+      },
+      {
+        "id": "sakura",
+        "name": "櫻花樹"
+      },
+      {
+        "id": "rainbow",
+        "name": "彩虹"
+      },
+      {
+        "id": "bunting",
+        "name": "彩旗串"
+      },
+      {
+        "id": "lighthouse",
+        "name": "燈塔"
+      }
+    ],
+    "cinema": {
+      "id": "epic",
+      "name": "電影史詩",
+      "requirement": "開場 4～6 秒：從遠方高空穿過雲層、環繞群島半圈、俯衝拉近再拉遠成全景（可加輕微景深模糊與標題淡入）；點島時鏡頭先拉高、沿弧線繞到島的正面再推近（1.5～2.5 秒）；任何時候點畫面或按 Esc 可以跳過"
+    }
+  },
+  "guestbook": {
+    "enabled": false
+  },
+  "visitCounter": {
+    "enabled": false
+  },
+  "exploreLive": {
+    "enabled": true,
+    "spec": "references/explore-and-live.md",
+    "features": [
+      "guidedTour",
+      "walkMode"
+    ],
+    "liveData": []
+  },
+  "release": {
+    "version": 1,
+    "basedOn": null,
+    "updatedAt": "2026-11-20",
+    "history": [
+      {
+        "version": 1,
+        "date": "2026-11-20",
+        "summary": "第一版"
+      }
+    ]
+  },
+  "webSources": [],
+  "publishMaterials": false,
+  "ai": "Codex",
+  "deploy": {
+    "preferred": "github",
+    "label": "GitHub Pages"
+  }
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="night" data-font="md">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="generator" content="IsleForge"><meta name="theme-color" content="#16222e"><meta name="description" content="为初中二年级打造的能量、功和功率3D探索课程。做实验、观察立体装置、完成挑战，发现生活里的科学。"><title>能量探索群岛 · 云端科学冒险</title><link rel="icon" href="./favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css"><script type="importmap">{"imports":{"three":"./vendor/three.module.js"}}</script></head>
+<body>
+<a class="skip" href="#island-list">跳到课程清单</a>
+<main id="world" aria-label="可旋转和探索的三维浮空群岛"><div id="canvas-host"></div><div id="labels"></div><div id="loading" role="status"><span class="loader-orbit"></span><b>云端航线准备中</b><small>正在搭建你的小小科学世界</small></div><div id="fallback" hidden><h2>用文字继续探索</h2><p>当前设备无法显示3D。所有课程、实验与挑战仍可从课程清单打开。</p><button data-action="list">打开课程清单</button></div></main>
+<header class="topbar"><a class="brand" href="./" aria-label="能量探索群岛首页"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M5 21 20 13 35 21 20 29Z" fill="#8bd3bb"/><path d="m5 21 15 15 15-15-15 8Z" fill="#b6a18b"/><path d="m22 2-9 15h7l-2 9 11-16h-8Z" fill="#f2c979"/></svg><span>能量探索群岛<small>云端科学冒险 · 第10章</small></span></a><div class="top-actions"><span id="clock" aria-live="off">云端时刻</span><button id="music-button" data-action="toggle-music" class="pill music-pill" aria-pressed="false" aria-label="播放或暂停背景轻音乐">🎵 轻音乐</button><button id="profile-button" data-action="profile" class="pill">建立冒险者</button><button data-action="settings" class="icon-button" aria-label="打开设置">⚙</button></div></header>
+<section class="hero" aria-label="探索说明"><div class="eyebrow">云海之上 · 科学发生之处</div><h1>让好奇心，<br>带你登岛。</h1><p>在岛屿实验与挑战中<br>学会能量、功和功率。</p><button class="primary" data-action="begin">开始探索 <span aria-hidden="true">✦</span></button><div class="hero-note">四座主题立体课程岛 · 互动实验与科学挑战</div></section>
+<aside class="journey" aria-label="学习进度"><div><span class="tiny">你的探索护照</span><button data-action="passport" class="text-button">查看护照</button></div><div id="mini-stamps" class="mini-stamps"></div><div class="progress-track"><i id="progress-fill"></i></div><p id="progress-summary">从第一座岛开始，收集科学发现。</p></aside>
+<div class="scene-note"><i></i><span id="scene-caption">浮空群岛 / 立体主题场景</span></div>
+<nav class="dock" aria-label="探索工具"><button data-action="list"><span>▦</span>课程清单</button><button data-action="overview"><span>⌖</span>全景</button><button data-action="tour"><span>▷</span>导览</button><button data-action="walk"><span>♧</span>漫游</button><button data-action="help"><span>?</span>帮助</button></nav>
+<div id="tour-card" class="floating-card" hidden></div>
+<div id="walk-ui" hidden><p>WASD／方向键移动 · 拖曳环顾 · Esc返回</p><button data-action="overview">退出漫游</button><div class="direction-pad" aria-label="漫游方向键"><button data-move="forward" aria-label="向前">↑</button><button data-move="left" aria-label="向左">←</button><button data-move="back" aria-label="向后">↓</button><button data-move="right" aria-label="向右">→</button></div></div>
+<div id="cinema" hidden><div class="cinema-title"><small>一场关于能量的冒险</small><strong>能量探索群岛</strong></div><button data-action="skip-cinema">跳过开场</button></div>
+<div id="bubble" class="bubble" hidden></div>
+<aside id="panel" class="panel" hidden aria-label="课程内容"><header class="panel-header"><span id="panel-kicker"></span><div class="panel-header-actions"><button data-action="font-cycle" class="font-cycle-btn" title="快速切换字体大小" aria-label="切换字体大小">A+</button><button data-action="close-panel" aria-label="关闭课程面板">✕</button></div></header><div id="panel-body"></div></aside>
+<dialog id="modal"><button class="modal-close" data-action="close-modal" aria-label="关闭对话框">✕</button><div id="modal-body"></div></dialog>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+<noscript><section class="no-js"><h1>能量探索群岛</h1><p>本课程的互动需要JavaScript。请启用它以阅读课程、做实验和参加挑战。</p><p>课程包含：生活能量、机械能、能量守恒、功与功率。</p></section></noscript>
+<script type="module" src="./js/app.js"></script>
+</body></html>

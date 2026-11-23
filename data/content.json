@@ -1,0 +1,842 @@
+{
+  "site": {
+    "title": "能量探索群岛",
+    "slug": "energy-explorer-islands",
+    "tagline": "在岛屿实验与挑战中学会能量、功和功率",
+    "author": "教师",
+    "contact": "",
+    "audience": "初中二年级",
+    "language": "zh-CN",
+    "mascot": {
+      "name": "小亮",
+      "description": "焦耳仔：天蓝色圆形小机器人，胸前有黄色闪电，背着实验工具包。"
+    }
+  },
+  "islands": [
+    {
+      "order": 1,
+      "id": "island-02",
+      "name": "生活能量岛",
+      "group": "10.1 常见能量",
+      "kicker": "10.1 生活中有哪些常见的能量？",
+      "landmark": "立体电池能量塔与太阳能风车广场",
+      "color": "#edb85d",
+      "intro": "从生活物品找出不同形式的能量",
+      "points": [
+        "学习机械能、化学能和电能",
+        "探索生活物品的能量形式",
+        "完成能量分类题"
+      ],
+      "extra": "生活情境、能量形式与说明图层",
+      "link": "",
+      "material": "materials/02_生活能量岛/内容.docx",
+      "materials": [
+        "materials/02_生活能量岛/内容.docx"
+      ],
+      "source": "生活能量岛/内容.docx；课程笔记第1页；课本55～56页；练习题.pptx与补充练习.docx",
+      "goal": "辨认机械能、化学能和电能三种常见能量，并结合生活实例说明能量特征与转化。",
+      "hint": "先看情境强调的是物体的运动/高度/弹性形变（机械能）、物质中储存并可发生反应的能量（化学能），还是用电器工作消耗的能量（电能）。注意一个物体可能同时具有多种能量！",
+      "sections": [
+        {
+          "title": "能量藏在哪里？",
+          "html": "<p>在自然界与日常生活中，<strong class=\"kw-primary\">能量</strong>有多种存在形式。生活中最常见的三种能量包括：<strong class=\"kw-accent\">机械能</strong>、<strong class=\"kw-green\">化学能</strong>和<strong class=\"kw-blue\">电能</strong>。同一个物体在不同状态下，也可能<strong class=\"kw-primary\">同时具有不同形式的能量</strong>。</p><div class=\"lesson-table-wrap\"><table class=\"lesson-table\"><thead><tr><th>能量形式</th><th>意义与特征</th><th>常见实例</th></tr></thead><tbody><tr><td><strong class=\"kw-accent\">机械能</strong></td><td>物体由于<strong>运动</strong>、<strong>位置（被举高）</strong>或<strong>弹性形变</strong>而具有的能量。包含<strong class=\"kw-primary\">动能</strong>、<strong class=\"kw-primary\">重力势能</strong>及<strong class=\"kw-primary\">弹性势能</strong>。</td><td>流星、奔跑的人、飞鸟</td></tr><tr><td><strong class=\"kw-green\">化学能</strong></td><td><strong>储存在物质中</strong>，可在<strong>化学反应</strong>时转化为其他形式的能量。</td><td>食物、煤炭、汽油、柴油</td></tr><tr><td><strong class=\"kw-blue\">电能</strong></td><td><strong>电所具有的能量</strong>，可转化为热、光、运动等其他形式的能量。</td><td>电热水壶、电动车充电</td></tr></tbody></table></div>"
+        },
+        {
+          "title": "机械能：运动、位置与形变",
+          "html": "<p><strong class=\"kw-accent\">机械能</strong>是物体由于<strong class=\"kw-primary\">运动</strong>、<strong class=\"kw-primary\">位置（高度）</strong>或<strong class=\"kw-primary\">弹性形变</strong>而具有的能量。它包含三种基本形式：<strong class=\"kw-accent\">动能</strong>、<strong class=\"kw-accent\">重力势能</strong>与<strong class=\"kw-accent\">弹性势能</strong>。</p><p>例如：操场上<strong class=\"kw-primary\">奔跑的人</strong>由于运动具有<strong class=\"kw-accent\">动能</strong>；天空中划过的<strong class=\"kw-primary\">流星</strong>与高空飞行的<strong class=\"kw-primary\">飞鸟</strong>，既在高速运动又处于高处，因此同时具有<strong class=\"kw-accent\">动能</strong>和<strong class=\"kw-accent\">重力势能</strong>（统称<strong class=\"kw-accent\">机械能</strong>）。</p>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-02-mechanical.svg",
+              "caption": "示意图：生活中的机械能（奔跑的人、高空飞鸟与弹性形变）"
+            }
+          ]
+        },
+        {
+          "title": "化学能：储存在物质中的能量",
+          "html": "<p><strong class=\"kw-green\">化学能</strong>是<strong class=\"kw-primary\">储存在物质内部</strong>的能量，当物质发生<strong class=\"kw-accent\">化学反应</strong>（如体内消化吸收、燃料燃烧、电池放电）时，就能释放并转化为其他形式的能量。</p><p>教材中的典型例子包括：我们每天吃的<strong class=\"kw-primary\">食物</strong>（帮助运动员助跑获得动能）、发电与取暖用的<strong class=\"kw-primary\">煤炭</strong>，以及汽车使用的<strong class=\"kw-primary\">汽油、柴油</strong>。电池内部也储存着<strong class=\"kw-green\">化学能</strong>。</p>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-02-chemical.svg",
+              "caption": "示意图：储存在食物、燃料（煤炭/汽油/柴油）与电池中的化学能"
+            }
+          ]
+        },
+        {
+          "title": "电能：现代生活的动力源泉",
+          "html": "<p><strong class=\"kw-blue\">电能</strong>是<strong class=\"kw-primary\">电流或电所具有的能量</strong>，非常容易通过导线输送，并转化为热（内能）、光能、机械能或化学能。</p><p>例如：正在烧水的<strong class=\"kw-primary\">电热水壶</strong>把<strong class=\"kw-blue\">电能</strong>主要转化为<strong class=\"kw-accent\">内能（热能）</strong>；给<strong class=\"kw-primary\">电动车充电</strong>时，是将<strong class=\"kw-blue\">电能</strong>转化为电池里的<strong class=\"kw-green\">化学能</strong>储存起来；而电动车行驶时，电动机又把<strong class=\"kw-blue\">电能</strong>转化为<strong class=\"kw-accent\">机械能</strong>。</p>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-02-electric.svg",
+              "caption": "示意图：电热水壶（电能→内能）与电动车充电（电能→化学能）"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "life-1",
+          "stem": "下列自然灾害中，主要是由机械能造成的是哪一项？",
+          "options": [
+            {
+              "id": "a",
+              "text": "森林大火蔓延"
+            },
+            {
+              "id": "b",
+              "text": "洪水冲垮房屋"
+            },
+            {
+              "id": "c",
+              "text": "疾病的传播"
+            },
+            {
+              "id": "d",
+              "text": "虫患使粮食大量减产"
+            }
+          ],
+          "answer": "b",
+          "explanation": "奔涌的洪水具有巨大的动能和重力势能（统称机械能），因此洪水冲垮房屋主要是由机械能造成的。"
+        },
+        {
+          "id": "life-2",
+          "stem": "伟贤同学是撑杆跳运动员，在起跳前的“助跑”阶段，运动员体内主要发生怎样的能量转化？",
+          "options": [
+            {
+              "id": "a",
+              "text": "消耗体内的化学能，使其获得动能"
+            },
+            {
+              "id": "b",
+              "text": "消耗体内的电能，使其获得重力势能"
+            },
+            {
+              "id": "c",
+              "text": "消耗体内的弹性势能，使其获得化学能"
+            },
+            {
+              "id": "d",
+              "text": "能量凭空产生，不需要消耗体内能量"
+            }
+          ],
+          "answer": "a",
+          "explanation": "人体通过食物储存化学能；运动员助跑时，消耗体内的化学能，转化为身体快速奔跑的动能。"
+        },
+        {
+          "id": "life-3",
+          "stem": "一个物体可能同时具有两种机械能。在“高空中飞行的雄鹰”、“已被拉伸的弹簧”、“拦河坝内静止的高处蓄水”中，同时具有动能和重力势能的是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "高空中飞行的雄鹰"
+            },
+            {
+              "id": "b",
+              "text": "已被拉伸的弹簧"
+            },
+            {
+              "id": "c",
+              "text": "拦河坝内静止的高处蓄水"
+            },
+            {
+              "id": "d",
+              "text": "水平地面上静止的足球"
+            }
+          ],
+          "answer": "a",
+          "explanation": "高空中飞行的雄鹰既在飞行运动（具有动能），又处于高处（具有重力势能）；拉伸的弹簧具有弹性势能；拦河坝内静止的高处蓄水主要具有重力势能。"
+        },
+        {
+          "id": "life-4",
+          "stem": "下列生活实例中，主要体现利用“化学能”的是哪一组？",
+          "options": [
+            {
+              "id": "a",
+              "text": "食物、煤炭、汽油和柴油"
+            },
+            {
+              "id": "b",
+              "text": "滚动的小球、高楼上的花盆"
+            },
+            {
+              "id": "c",
+              "text": "拉开的弓、弯曲的撑杆"
+            },
+            {
+              "id": "d",
+              "text": "高处的滑雪运动员、飞翔的鸟"
+            }
+          ],
+          "answer": "a",
+          "explanation": "食物、煤炭、汽油、柴油内部都储存着化学能，可在化学反应（消化或燃烧）时转化为其他形式的能量。"
+        },
+        {
+          "id": "life-5",
+          "stem": "关于电热水壶烧水与电动车充电时的能量形式，下列说法正确的是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "两者都在利用电能，并将其转化为其他形式的能量"
+            },
+            {
+              "id": "b",
+              "text": "电热水壶烧水时把内能转化为电能"
+            },
+            {
+              "id": "c",
+              "text": "电动车充电时不需要消耗电能"
+            },
+            {
+              "id": "d",
+              "text": "电能只能转化为光能，不能转化为热或运动"
+            }
+          ],
+          "answer": "a",
+          "explanation": "电能是电所具有的能量，电热水壶把电能主要转化为水的内能（热能），电动车充电把电能转化为电池的化学能。"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "id": "island-03",
+      "name": "机械能实验岛",
+      "group": "10.2 机械能",
+      "kicker": "10.2 机械能有哪些常见的形式？",
+      "landmark": "立体双轨斜面撞击台与落球沙坑实验架",
+      "color": "#6cc7bb",
+      "intro": "改变条件，发现动能和势能的规律",
+      "points": [
+        "学习动能、重力势能和弹性势能",
+        "控制变量探索机械能及其转化",
+        "完成实验判断题"
+      ],
+      "extra": "质量、释放高度、实验类型、对比记录",
+      "link": "",
+      "material": "materials/03_机械能实验岛/Ek.html",
+      "materials": [
+        "materials/03_机械能实验岛/Ek.html",
+        "materials/03_机械能实验岛/Ep.html",
+        "materials/03_机械能实验岛/内容.docx"
+      ],
+      "source": "机械能实验岛/内容.docx、图档(11张)、Ek.html、Ep.html；课程笔记1～2页；练习题.pptx与补充练习.docx",
+      "goal": "掌握动能、重力势能与弹性势能的影响因素，学会用控制变量法分析实验，并理解动能与势能的相互转化。",
+      "hint": "控制变量法要记住：研究哪个因素（操纵性变数），就只改变它，同时保持其他条件（固定性变数）完全相同！斜面实验中“同一高度释放”是为了让小球到达水平面时的初速度相同。",
+      "sections": [
+        {
+          "title": "动能及其常见实例",
+          "html": "<p><strong class=\"kw-accent\">机械能</strong>包括<strong class=\"kw-primary\">动能</strong>和<strong class=\"kw-primary\">势能</strong>（势能又分为<strong class=\"kw-green\">重力势能</strong>和<strong class=\"kw-blue\">弹性势能</strong>）。</p><p><strong class=\"kw-accent\">动能定义</strong>：物体由于<strong class=\"kw-primary\">运动</strong>而具有的能量。一切正在运动的物体，如<strong class=\"kw-primary\">行驶中的汽车</strong>、<strong class=\"kw-primary\">滚动的小球</strong>，都具有动能。</p>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-03/kinetic-car.png",
+              "caption": "动能实例：行驶中的汽车"
+            },
+            {
+              "src": "./assets/diagrams/island-03/kinetic-ball.png",
+              "caption": "动能实例：滚动的小球"
+            }
+          ]
+        },
+        {
+          "title": "探究：动能的大小与什么因素有关？",
+          "html": "<p>我们通过斜面小球撞击木块 C 的实验来探究动能大小（通过<strong class=\"kw-blue\">木块 C 被推动的距离</strong>来反映小球动能的大小）：</p><div class=\"highlight-card\"><h4>实验一：物体质量的大小与动能的关系</h4><ul><li><strong class=\"kw-accent\">操纵性变数</strong>：<strong>小球质量</strong>（$A_{\\text{质量大}}$ 与 $A_{\\text{质量小}}$）</li><li><strong class=\"kw-green\">固定性变数</strong>：<strong>小球被释放高度 $h$</strong>（使小球到达斜面底端时的<strong>初速度相同</strong>）</li><li><strong class=\"kw-blue\">反应性变数</strong>：<strong>木块 C 被推动的距离</strong>（$s_{\\text{大}} > s_{\\text{小}}$）</li><li><strong class=\"kw-primary\">实验结论</strong>：速度相同时，<strong class=\"kw-accent\">质量越大，动能越大</strong>。</li></ul></div><div class=\"highlight-card\"><h4>实验二：物体速度的大小与动能的关系</h4><ul><li><strong class=\"kw-accent\">操纵性变数</strong>：<strong>小球被释放高度</strong>（$h_{\\text{高}}$ 与 $h_{\\text{低}}$，改变到达底端时的速度）</li><li><strong class=\"kw-green\">固定性变数</strong>：<strong>小球质量</strong>（使用同一个小球 A）</li><li><strong class=\"kw-blue\">反应性变数</strong>：<strong>木块 C 被推动的距离</strong>（$s_{\\text{大}} > s_{\\text{小}}$）</li><li><strong class=\"kw-primary\">实验结论</strong>：质量相同时，<strong class=\"kw-accent\">速度越大，动能越大</strong>。</li></ul></div>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-03/kinetic-mass.png",
+              "caption": "实验一：物体质量的大小与动能的关系（相同高度 h 释放不同质量小球）"
+            },
+            {
+              "src": "./assets/diagrams/island-03/kinetic-speed.png",
+              "caption": "实验二：物体速度的大小与动能的关系（不同高度释放同一质量小球）"
+            }
+          ]
+        },
+        {
+          "title": "重力势能及其影响因素",
+          "html": "<p><strong class=\"kw-green\">重力势能定义</strong>：物体由于<strong class=\"kw-primary\">被举高</strong>而具有的能量。例如<strong class=\"kw-primary\">高处的滑雪运动员</strong>、<strong class=\"kw-primary\">高楼上的花盆</strong>都具有重力势能。</p><p>在“橡皮泥 A、B、C 撞击小桌钉子”的实验中，我们通过观察<strong class=\"kw-blue\">钉子下陷深度（$D_1、D_2、D_3$）</strong>来比较重力势能的大小：</p><div class=\"lesson-table-wrap\"><table class=\"lesson-table\"><thead><tr><th>条件</th><th>A</th><th>B</th><th>C</th></tr></thead><tbody><tr><td><strong>质量</strong></td><td>$m$</td><td>$m$</td><td>$2m$</td></tr><tr><td><strong>释放高度</strong></td><td>$h$</td><td>$2h$</td><td>$h$</td></tr><tr><td><strong>钉子下陷深度</strong></td><td>$D_1$</td><td>$D_2$</td><td>$D_3$</td></tr></tbody></table></div><ul><li><strong class=\"kw-primary\">比较条件 A 和 B</strong>（质量均为 $m$）：<strong class=\"kw-accent\">高度越高，重力势能越大</strong>（$D_2 > D_1$）。</li><li><strong class=\"kw-primary\">比较条件 A 和 C</strong>（释放高度均为 $h$）：<strong class=\"kw-accent\">质量越大，重力势能越大</strong>（$D_3 > D_1$）。</li></ul>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-03/potential-skier.png",
+              "caption": "重力势能实例：高处的滑雪运动员"
+            },
+            {
+              "src": "./assets/diagrams/island-03/potential-flowerpot.png",
+              "caption": "重力势能实例：高楼上的花盆"
+            },
+            {
+              "src": "./assets/diagrams/island-03/potential-mass-height.png",
+              "caption": "实验探究：重力势能与质量、高度的关系（比较钉子下陷深度 D₁、D₂、D₃）"
+            }
+          ]
+        },
+        {
+          "title": "弹性势能",
+          "html": "<p><strong class=\"kw-blue\">弹性势能定义</strong>：物体由于<strong class=\"kw-primary\">弹性形变</strong>而具有的能量。例如<strong class=\"kw-primary\">拉开的弓</strong>、<strong class=\"kw-primary\">弯曲的撑杆</strong>都储存着弹性势能。</p><p><strong class=\"kw-accent\">弹性形变程度</strong>：在弹性限度内，<strong class=\"kw-primary\">弹性形变越大，恢复原状时释放的能量越多</strong>（即弹性势能越大）。</p>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-03/elastic-bow.png",
+              "caption": "弹性势能实例：拉开的弓"
+            },
+            {
+              "src": "./assets/diagrams/island-03/elastic-pole.png",
+              "caption": "弹性势能实例：弯曲的撑杆"
+            }
+          ]
+        },
+        {
+          "title": "动能与势能的相互转化",
+          "html": "<p>动能与势能可以在一定条件下<strong class=\"kw-primary\">相互转化</strong>：</p><ul><li><strong class=\"kw-blue\">机械手表</strong>：上紧发条后储存<strong class=\"kw-blue\">弹性势能</strong>；发条释放时带动齿轮与指针运动，转化为<strong class=\"kw-accent\">动能</strong>。</li><li><strong class=\"kw-green\">篮球上抛</strong>：篮球<strong>上升时</strong>速度减慢、高度增加，<strong class=\"kw-accent\">动能转化为重力势能</strong>；<strong>下降时</strong>高度降低、速度加快，<strong class=\"kw-green\">重力势能转化为动能</strong>。</li></ul><p class=\"goal-box\"><strong>机械能守恒</strong>：如果<strong class=\"kw-primary\">只有动能和势能相互转化</strong>（忽略空气阻力与摩擦），<strong class=\"kw-accent\">机械能的总量保持不变</strong>（即<strong class=\"kw-primary\">机械能守恒</strong>）。</p>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-03/convert-watch.png",
+              "caption": "动能与势能转化：机械手表（发条弹性势能 → 齿轮动能）"
+            },
+            {
+              "src": "./assets/diagrams/island-03/convert-basketball.png",
+              "caption": "动能与势能转化：篮球上抛与下落过程中动能、重力势能与机械能总量的关系"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "mech-1",
+          "stem": "张晔同学在华文课上表演杜甫诗句“挽弓当挽强，用箭当用长”时，用力将仿造弓箭的弦拉开。此时被拉开的弓弦主要具有什么能量？",
+          "options": [
+            {
+              "id": "a",
+              "text": "动能"
+            },
+            {
+              "id": "b",
+              "text": "重力势能"
+            },
+            {
+              "id": "c",
+              "text": "弹性势能"
+            },
+            {
+              "id": "d",
+              "text": "电能"
+            }
+          ],
+          "answer": "c",
+          "explanation": "物体由于发生弹性形变而具有的能量叫弹性势能。用力将弓弦拉开，弓与弦发生弹性形变，因此具有弹性势能。"
+        },
+        {
+          "id": "mech-2",
+          "stem": "勇宾同学做重力势能实验：他将一个沾满石灰的篮球从不同高度放手掉落地面，在甲处留下较大的圆形印记，在乙处留下较小的圆形印记。关于篮球下落前所具备的重力势能，下列说法正确的是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "落在甲处（印记较大）时对应的初始重力势能较大"
+            },
+            {
+              "id": "b",
+              "text": "落在乙处（印记较小）时对应的初始重力势能较大"
+            },
+            {
+              "id": "c",
+              "text": "两处重力势能一样大"
+            },
+            {
+              "id": "d",
+              "text": "重力势能大小与高度无关"
+            }
+          ],
+          "answer": "a",
+          "explanation": "同一个篮球质量相同，释放高度越高，重力势能越大，落地撞击时发生的形变越大，留下的石灰印记（甲）也就越大。"
+        },
+        {
+          "id": "mech-3",
+          "stem": "芷蔚同学将一个小球竖直往上抛（忽略空气阻力），小球到达最高点甲处后掉落，先后经过半空中的乙、丙两个不同高度位置。小球经过乙、丙两位置时具有相同的什么物理量？",
+          "options": [
+            {
+              "id": "a",
+              "text": "动能"
+            },
+            {
+              "id": "b",
+              "text": "重力势能"
+            },
+            {
+              "id": "c",
+              "text": "弹性势能"
+            },
+            {
+              "id": "d",
+              "text": "机械能（总机械能）"
+            }
+          ],
+          "answer": "d",
+          "explanation": "忽略空气阻力时，小球只有动能和重力势能相互转化，机械能总量保持不变（机械能守恒），因此在乙、丙两位置具有相同的机械能。"
+        },
+        {
+          "id": "mech-4",
+          "stem": "小东设计斜面实验探究动能大小与质量的关系：让不同质量的两个小球沿同一光滑斜面从同一高度处由静止开始滚下，再撞击水平面上的纸盒。让两球从“同一高度”开始运动的目的是什么？",
+          "options": [
+            {
+              "id": "a",
+              "text": "使两球到达水平面时的初速度相同"
+            },
+            {
+              "id": "b",
+              "text": "使两球的质量变得相同"
+            },
+            {
+              "id": "c",
+              "text": "使两球具有相同的重力势能"
+            },
+            {
+              "id": "d",
+              "text": "使纸盒受到的摩擦力消失"
+            }
+          ],
+          "answer": "a",
+          "explanation": "探究动能与质量的关系时，必须控制速度相同（固定性变数）。让不同质量的小球从同一斜面同一高度由静止滚下，是为了使两球进入水平面时的初速度相同。"
+        },
+        {
+          "id": "mech-5",
+          "stem": "高速公路上突然飞来的一块小物块就能击破汽车挡风玻璃，飞来的物块具有很大破坏力的主要原因是它具有？",
+          "options": [
+            {
+              "id": "a",
+              "text": "较大的动能"
+            },
+            {
+              "id": "b",
+              "text": "较大的弹性势能"
+            },
+            {
+              "id": "c",
+              "text": "较大的密度"
+            },
+            {
+              "id": "d",
+              "text": "较大的化学能"
+            }
+          ],
+          "answer": "a",
+          "explanation": "高速飞来的物块运动速度极快，因此具有较大的动能，撞击时会产生巨大的破坏力。"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "id": "island-04",
+      "name": "能量守恒岛",
+      "group": "10.3 能量守恒",
+      "kicker": "10.3 什么是能量守恒定律？",
+      "landmark": "立体水库大坝、旋转水轮发电机与输电铁塔",
+      "color": "#8daee2",
+      "intro": "追踪能量的转化与转移",
+      "points": [
+        "学习能量守恒定律",
+        "探索发电与生活中的能量转化",
+        "完成转化流程题"
+      ],
+      "extra": "流程步骤、能量图层、播放／暂停",
+      "link": "",
+      "material": "materials/04_能量守恒岛/内容.docx",
+      "materials": [
+        "materials/04_能量守恒岛/内容.docx"
+      ],
+      "source": "能量守恒岛/内容.docx、图档(1张)；课程笔记第3页；练习题.pptx与补充练习.docx",
+      "goal": "理解能量守恒定律，区分能量的转化与转移，掌握水力发电及日常生活中的能量转化过程。",
+      "hint": "分析能量去向时，记住“总能量永远守恒”！当机械能因为摩擦或空气阻力减小时，它并没有消失，而是转化成了内能（热能）。",
+      "sections": [
+        {
+          "title": "能量守恒定律",
+          "html": "<div class=\"goal-box\"><strong>能量守恒定律</strong>：能量<strong class=\"kw-accent\">既不能凭空产生，也不能凭空消失</strong>，只能从一种形式<strong class=\"kw-primary\">转化</strong>为另一种形式，或从一个物体<strong class=\"kw-blue\">转移</strong>到另一个物体，而<strong class=\"kw-accent\">能量总量保持不变</strong>。</div><p><strong class=\"kw-primary\">转化</strong>强调能量的<strong>形式发生改变</strong>（如电能转化为机械能）；<strong class=\"kw-blue\">转移</strong>强调同一种形式的能量<strong>从一个物体传递到另一个物体</strong>（如热水把内能转移给冷杯子）。</p>"
+        },
+        {
+          "title": "水力发电能量转化的过程",
+          "html": "<p>观察下方的<strong class=\"kw-primary\">水力发电站剖面示意图</strong>，追踪水流从高处水库一直到输电铁塔的能量变化：</p><p class=\"flow-banner\"><strong class=\"kw-green\">水的重力势能</strong>（高处水库） → <strong class=\"kw-accent\">水的动能</strong>（进水口高速水流） → <strong class=\"kw-primary\">水轮机的机械能</strong>（推动水轮机旋转） → <strong class=\"kw-blue\">电能</strong>（发电机发电并经输电铁塔送入电力网）</p>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-04/hydro-power.png",
+              "caption": "水力发电能量转化的过程：水库（重力势能）→ 进水口（水的动能）→ 水轮机（机械能）→ 发电机与输电铁塔（电能）"
+            }
+          ]
+        },
+        {
+          "title": "常见发电与生活中的能量转化",
+          "html": "<p>除了水力发电，自然界与现代工业中处处遵循着能量守恒与转化：</p><div class=\"lesson-table-wrap\"><table class=\"lesson-table\"><thead><tr><th>实例</th><th>主要能量转化过程</th></tr></thead><tbody><tr><td><strong>风力发电</strong></td><td><strong class=\"kw-accent\">机械能</strong>（风的动能） → <strong class=\"kw-blue\">电能</strong></td></tr><tr><td><strong>火力发电</strong></td><td><strong class=\"kw-green\">化学能</strong>（燃料燃烧先转内能） → <strong class=\"kw-accent\">机械能</strong> → <strong class=\"kw-blue\">电能</strong></td></tr><tr><td><strong>电动列车</strong></td><td><strong class=\"kw-blue\">电能</strong> → <strong class=\"kw-accent\">机械能</strong></td></tr><tr><td><strong>植物光合作用</strong></td><td><strong class=\"kw-accent\">光能</strong>（太阳光） → <strong class=\"kw-green\">化学能</strong>（储存在有机物中）</td></tr></tbody></table></div>"
+        },
+        {
+          "title": "动动脑：摩擦阻力让能量消失了吗？",
+          "html": "<p>在日常生活中，能量的转化无处不在。比如<strong>滚摆上下往复运动时上升的最大高度逐渐降低</strong>、<strong>自行车下坡捏刹车时刹车片发烫</strong>、<strong>小球冲上粗糙斜面有机械能损失</strong>。</p><p>这是因为存在<strong class=\"kw-accent\">摩擦力或空气阻力</strong>，克服摩擦做功使得<strong class=\"kw-primary\">部分机械能转化成了内能（热能）</strong>。虽然机械能减少了，但<strong class=\"kw-accent\">所有形式能量的总和依然保持不变</strong>！</p>"
+        }
+      ],
+      "questions": [
+        {
+          "id": "conserve-1",
+          "stem": "某同学骑自行车下一长坡时，因车速过快于是捏紧刹车，保持安全速度匀速行至坡底，下车检查发现刹车片发烫。有关此过程的说法正确的是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "刚下坡时，是动能转化为重力势能"
+            },
+            {
+              "id": "b",
+              "text": "匀速下坡时，高度降低，重力势能逐渐减小，部分机械能转化为内能（热能）"
+            },
+            {
+              "id": "c",
+              "text": "匀速下行时，机械能总量保持不变"
+            },
+            {
+              "id": "d",
+              "text": "匀速下行时，动能逐渐增大"
+            }
+          ],
+          "answer": "b",
+          "explanation": "匀速下坡时速度不变（动能不变），高度降低（重力势能逐渐减小），因此机械能减小；减小的机械能通过刹车片摩擦转化为内能（热能），所以刹车片发烫。"
+        },
+        {
+          "id": "conserve-2",
+          "stem": "“神九”飞天完成太空任务后，在回收返回舱的过程中，打开巨大降落伞到落地的减速下降阶段，关于航天员的能量变化，下列说法正确的是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "返回舱进入大气层向地面运动的过程中机械能守恒"
+            },
+            {
+              "id": "b",
+              "text": "返回舱向地面运动的过程中势能增加，动能减小"
+            },
+            {
+              "id": "c",
+              "text": "返回舱打开巨大降落伞是为了增大动能"
+            },
+            {
+              "id": "d",
+              "text": "打开降落伞减速到落地的过程中，航天员的动能和重力势能都在减小"
+            }
+          ],
+          "answer": "d",
+          "explanation": "打开降落伞减速下降到落地时，速度减小（动能减小），高度降低（重力势能减小），减小的机械能克服空气阻力转化为内能，总能量依然守恒。"
+        },
+        {
+          "id": "conserve-3",
+          "stem": "滚摆在竖直平面内上下往复运动，观察发现它每次能上升到的最大高度都会逐渐降低。对此现象最科学的解释是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "能量凭空消失了一部分，能量守恒定律不成立"
+            },
+            {
+              "id": "b",
+              "text": "滚摆与空气、绳子存在摩擦，使得部分机械能转化为热能（内能），总能量仍守恒"
+            },
+            {
+              "id": "c",
+              "text": "滚摆的质量在运动过程中越来越小"
+            },
+            {
+              "id": "d",
+              "text": "往下运动时动能转化为重力势能"
+            }
+          ],
+          "answer": "b",
+          "explanation": "滚摆从上往下运动时重力势能转化为动能；由于滚摆与空气存在摩擦，部分机械能转化为热能（内能），导致机械能减少、最高点降低，但总能量保持不变。"
+        },
+        {
+          "id": "conserve-4",
+          "stem": "水力发电站将高处水库的水引入水轮机带动发电机发电，其主要的能量转化顺序是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "水的重力势能 → 水的动能 → 水轮机机械能 → 电能"
+            },
+            {
+              "id": "b",
+              "text": "电能 → 水轮机机械能 → 水的动能 → 水的重力势能"
+            },
+            {
+              "id": "c",
+              "text": "化学能 → 内能 → 机械能 → 电能"
+            },
+            {
+              "id": "d",
+              "text": "光能 → 化学能 → 电能"
+            }
+          ],
+          "answer": "a",
+          "explanation": "水力发电过程中，高处水库的水具有重力势能，流下进水口转化为水的动能，推动水轮机转动（机械能），最后由发电机转化为电能。"
+        },
+        {
+          "id": "conserve-5",
+          "stem": "下列实例与其主要能量转化的配对中，哪一项是正确的？",
+          "options": [
+            {
+              "id": "a",
+              "text": "植物光合作用：光能 → 化学能"
+            },
+            {
+              "id": "b",
+              "text": "电动列车行驶：机械能 → 电能"
+            },
+            {
+              "id": "c",
+              "text": "风力发电：化学能 → 电能"
+            },
+            {
+              "id": "d",
+              "text": "火力发电：光能 → 机械能 → 电能"
+            }
+          ],
+          "answer": "a",
+          "explanation": "植物光合作用把太阳光能转化为储存在有机物中的化学能；电动列车是电能→机械能；风力发电是机械能→电能；火力发电是化学能→内能→机械能→电能。"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "id": "island-05",
+      "name": "功与功率岛",
+      "group": "10.4 功与功率",
+      "kicker": "10.4 能量的转化量以及能量转化的速度如何测量？",
+      "landmark": "立体双臂起重塔与瓦特齿轮钟塔",
+      "color": "#e99b7a",
+      "intro": "测量做功多少，比较做功快慢",
+      "points": [
+        "学习做功条件及功和功率公式",
+        "探索同功不同时的功率差异",
+        "完成情境判断与计算题"
+      ],
+      "extra": "力、沿力方向的位移、时间、计算图层",
+      "link": "",
+      "material": "materials/05_功与功率岛/内容.docx",
+      "materials": [
+        "materials/05_功与功率岛/内容.docx"
+      ],
+      "source": "功与功率岛/内容.docx、图档(2张)；课程笔记第4页；练习题.pptx与补充练习.docx",
+      "goal": "掌握力学做功的两个必要条件，运用 W = Fs 与 P = W/t = Fv 进行功与功率的判断和计算。",
+      "hint": "判断力是否做功要看两点：①有力作用在物体上；②物体在这个力的方向上发生位移！“有力无位移”（如推墙不动、举杠铃停留）或“力与位移垂直”（如水平提包行走时的竖直提力）都不做功。",
+      "sections": [
+        {
+          "title": "10.4.1 如何计算功？做功的必要条件",
+          "html": "<p><strong class=\"kw-accent\">功的定义</strong>：<strong class=\"kw-primary\">力</strong>跟物体在<strong class=\"kw-primary\">力的方向上通过的位移</strong>的乘积。</p><div class=\"highlight-card\"><h4>做功的两个必要条件（缺一不可）：</h4><ol><li><strong class=\"kw-accent\">有力作用在物体上</strong>（$F$）；</li><li><strong class=\"kw-blue\">物体在力的方向上发生位移</strong>（$s$）。</li></ol></div><p><strong class=\"kw-primary\">功的公式</strong>：<strong class=\"formula-badge\">$W = Fs$</strong></p><ul><li><strong class=\"kw-accent\">$W$</strong>：功，单位<strong class=\"kw-accent\">焦耳（J）</strong>；</li><li><strong class=\"kw-primary\">$F$</strong>：力，单位<strong class=\"kw-primary\">牛顿（N）</strong>；</li><li><strong class=\"kw-blue\">$s$</strong>：沿力方向的位移，单位<strong class=\"kw-blue\">米（m）</strong>。</li><li><strong class=\"kw-green\">单位关系</strong>：<strong class=\"kw-primary\">$1\\text{ J} = 1\\text{ N}\\cdot\\text{m}$</strong>（即 $1\\text{ N}$ 的力使物体沿力方向移动 $1\\text{ m}$ 所做的功）。</li></ul>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-05/work-condition.png",
+              "caption": "做功的必要条件与公式：恒力 F 使物体沿力的方向发生位移 s，W = F × s"
+            }
+          ]
+        },
+        {
+          "title": "动动脑：这四种情境做功了吗？",
+          "html": "<p>对照做功的两个必要条件，分析教材中“动动脑”的四个经典情境：</p><div class=\"lesson-table-wrap\"><table class=\"lesson-table\"><thead><tr><th>情境</th><th>是否做功</th><th>科学原因分析</th></tr></thead><tbody><tr><td><strong>推墙而墙不动</strong></td><td><strong class=\"kw-accent\">不做功</strong></td><td>有力作用在墙上，但墙在推力方向上<strong>没有发生位移</strong>（劳而无功）。</td></tr><tr><td><strong>竖直提起书包</strong></td><td><strong class=\"kw-green\">做功</strong></td><td>手对书包有竖直向上的提力，且书包<strong>沿提力方向向上发生了位移</strong>。</td></tr><tr><td><strong>水平提着书包匀速行走（竖直提力）</strong></td><td><strong class=\"kw-accent\">不做功</strong></td><td>提力方向<strong>竖直向上</strong>，而位移方向<strong>水平向前</strong>，力与位移方向垂直，在提力方向上没有位移（垂直无功）。</td></tr><tr><td><strong>水平拉动物体前进</strong></td><td><strong class=\"kw-green\">做功</strong></td><td>物体受到水平拉力，且<strong>沿水平拉力方向发生了位移</strong>。</td></tr></tbody></table></div>"
+        },
+        {
+          "title": "10.4.2 什么是功率？",
+          "html": "<p><strong class=\"kw-blue\">功率的定义</strong>：<strong class=\"kw-primary\">单位时间内所做的功</strong>。功率是用来描述<strong class=\"kw-accent\">做功快慢</strong>的物理量（功率越大，表示做功越快，不一定做功越多）。</p><p><strong class=\"kw-primary\">功率的公式</strong>：<strong class=\"formula-badge\">$P = \\dfrac{W}{t} = Fv$</strong></p><ul><li><strong class=\"kw-blue\">$P$</strong>：功率，单位<strong class=\"kw-blue\">瓦特（W）</strong>；<strong class=\"kw-accent\">$W$</strong>：功，单位<strong class=\"kw-accent\">焦耳（J）</strong>；</li><li><strong class=\"kw-primary\">$t$</strong>：时间，单位<strong class=\"kw-primary\">秒（s）</strong>；<strong class=\"kw-green\">$v$</strong>：速度，单位<strong class=\"kw-green\">米/秒（m/s）</strong>。</li><li><strong class=\"kw-primary\">单位换算</strong>：<strong class=\"kw-blue\">$1\\text{ W} = 1\\text{ J/s}$</strong>（$1\\text{ s}$ 内完成 $1\\text{ J}$ 的功，功率即为 $1\\text{ W}$）；<strong class=\"kw-accent\">$1\\text{ kW} = 1000\\text{ W}$</strong>；<strong class=\"kw-accent\">$1\\text{ MW} = 1000\\text{ kW}$</strong>。</li></ul>"
+        },
+        {
+          "title": "生活中常见的功率与能量转化",
+          "html": "<p>不同交通工具与人体的功率差异巨大，同时伴随着不同的能量转化过程：</p><ul><li><strong class=\"kw-primary\">人步行</strong>：功率约 <strong class=\"kw-blue\">$20\\text{ W}$</strong>（化学能［食物］→ 动能［身体运动］+ 热能）</li><li><strong class=\"kw-primary\">小汽车</strong>：功率约 <strong class=\"kw-blue\">$50\\sim 100\\text{ kW}$</strong>（化学能［燃料］→ 动能［行驶］+ 热能）</li><li><strong class=\"kw-primary\">高速列车</strong>：功率约 <strong class=\"kw-blue\">$7200\\text{ kW}$</strong>（电能 → 动能［高速行驶］+ 热能）</li><li><strong class=\"kw-primary\">飞机</strong>：功率约 <strong class=\"kw-blue\">$110\\text{ MW}$</strong>（化学能［航空燃料］→ 动能［飞行］+ 热能）</li></ul>",
+          "diagrams": [
+            {
+              "src": "./assets/diagrams/island-05/common-power.png",
+              "caption": "常见的功率与能量转化对比：人步行（约20 W）、小汽车（50~100 kW）、高速列车（约7200 kW）、飞机（约110 MW）"
+            }
+          ]
+        }
+      ],
+      "questions": [
+        {
+          "id": "work-1",
+          "stem": "下列哪一个不是“功”的单位？",
+          "options": [
+            {
+              "id": "a",
+              "text": "J（焦耳）"
+            },
+            {
+              "id": "b",
+              "text": "N·m（牛·米）"
+            },
+            {
+              "id": "c",
+              "text": "W（瓦特）"
+            },
+            {
+              "id": "d",
+              "text": "kJ（千焦）"
+            }
+          ],
+          "answer": "c",
+          "explanation": "W（瓦特）是功率的国际单位；功的国际单位是焦耳（J），且 1 J = 1 N·m，千焦（kJ）也是功或能量的常用单位。"
+        },
+        {
+          "id": "work-2",
+          "stem": "运动会上，博仁同学担任义工做了许多事情。请判断下列各种动作中，哪一种力一定有做功？",
+          "options": [
+            {
+              "id": "a",
+              "text": "用力推车但车未动，手对车的推力一定做了功"
+            },
+            {
+              "id": "b",
+              "text": "将重物举在空中保持不动（或举重运动员在空中停留3秒），手对重物的支持力一定做了功"
+            },
+            {
+              "id": "c",
+              "text": "手拉着木箱沿水平拉力方向移动2米，手对木箱的拉力一定做了功"
+            },
+            {
+              "id": "d",
+              "text": "已经踢出的足球在草地上滚动过程中，脚的踢力一直在对足球做功"
+            }
+          ],
+          "answer": "c",
+          "explanation": "手拉木箱沿拉力方向水平移动2米，同时满足“有力作用”和“沿力的方向发生位移”两个必要条件。推车未动、空中停留均无位移；踢出的足球靠惯性滚动，脚已不再施力。"
+        },
+        {
+          "id": "work-3",
+          "stem": "玥怡同学用 50 N 的水平拉力，分别拉着重量为 10 N 和 50 N 的两辆玩具汽车，让它们都在水平拉力的方向上移动 2 m。关于拉力做的功，下列说法正确的是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "对 10 N 的汽车做的功多"
+            },
+            {
+              "id": "b",
+              "text": "对 50 N 的汽车做的功多"
+            },
+            {
+              "id": "c",
+              "text": "对两辆汽车做的功相同（均为 100 J）"
+            },
+            {
+              "id": "d",
+              "text": "条件不足，无法判断"
+            }
+          ],
+          "answer": "c",
+          "explanation": "根据功的公式 W = Fs，拉力均为 F = 50 N，沿拉力方向的位移均为 s = 2 m，因此拉力做的功均为 W = 50 N × 2 m = 100 J，两次做功一样多。"
+        },
+        {
+          "id": "work-4",
+          "stem": "俊杰先生想买一辆小轿车，销售人员介绍某款新轿车的功率为 80 kW。功率为“80 kW”的科学含义是什么？",
+          "options": [
+            {
+              "id": "a",
+              "text": "该小轿车一共只能做 80000 J 的功"
+            },
+            {
+              "id": "b",
+              "text": "该小轿车每秒钟能做 80000 J 的功"
+            },
+            {
+              "id": "c",
+              "text": "该小轿车做功的快慢为 80 kW/s"
+            },
+            {
+              "id": "d",
+              "text": "该小轿车能提供的最大牵引力为 80000 N"
+            }
+          ],
+          "answer": "b",
+          "explanation": "功率表示单位时间内所做的功。80 kW = 80000 W = 80000 J/s，代表该轿车正常工作时每秒钟能做 80000 J 的功。"
+        },
+        {
+          "id": "work-5",
+          "stem": "起重机将一个质量为 2000 kg 的集装箱以 1 m/s 的速度竖直向上匀速提升到 10 m 高处（取 g = 10 N/kg），则起重机对集装箱做的功 W 和功率 P 分别是多少？",
+          "options": [
+            {
+              "id": "a",
+              "text": "功 W = 200000 J，功率 P = 20000 W"
+            },
+            {
+              "id": "b",
+              "text": "功 W = 20000 J，功率 P = 2000 W"
+            },
+            {
+              "id": "c",
+              "text": "功 W = 200000 J，功率 P = 2000 W"
+            },
+            {
+              "id": "d",
+              "text": "功 W = 20000 J，功率 P = 200000 W"
+            }
+          ],
+          "answer": "a",
+          "explanation": "匀速提升时拉力 F = mg = 2000 kg × 10 N/kg = 20000 N；做功 W = Fs = 20000 N × 10 m = 200000 J；功率 P = Fv = 20000 N × 1 m/s = 20000 W（或用 t = 10 s，P = W/t = 20000 W）。"
+        }
+      ]
+    }
+  ],
+  "center": {
+    "id": "center",
+    "name": "总复习大岛",
+    "group": "全章复习",
+    "intro": "让四条学习航线在这里相遇",
+    "goal": "联结常见能量、机械能、能量守恒、功与功率四大核心概念",
+    "sections": [
+      {
+        "title": "欢迎来到中央互动观测台",
+        "html": "<p>在这里，你可以自由切换 <strong class=\"kw-primary\">10.1 常见能量</strong>、<strong class=\"kw-accent\">10.2 机械能</strong>、<strong class=\"kw-green\">10.3 能量守恒</strong> 与 <strong class=\"kw-blue\">10.4 功与功率</strong> 的互动观测模型，把每一座岛的实验证据与科学结论串联起来。</p>"
+      },
+      {
+        "title": "全章核心公式与定律速览",
+        "html": "<div class=\"highlight-card\"><ul><li><strong class=\"kw-primary\">机械能</strong> $=$ <strong class=\"kw-accent\">动能</strong>（与质量、速度有关）$+$ <strong class=\"kw-green\">势能</strong>（重力势能与质量、高度有关；弹性势能与弹性形变程度有关）。</li><li><strong class=\"kw-green\">能量守恒定律</strong>：能量既不会凭空产生，也不会凭空消失，只会转化或转移，<strong class=\"kw-accent\">总量保持不变</strong>。</li><li><strong class=\"kw-accent\">力学做功</strong>：<strong class=\"formula-badge\">$W = Fs$</strong>（单位：$1\\text{ J} = 1\\text{ N}\\cdot\\text{m}$，需同时有力及沿力方向的位移）。</li><li><strong class=\"kw-blue\">功率（做功快慢）</strong>：<strong class=\"formula-badge\">$P = \\dfrac{W}{t} = Fv$</strong>（单位：$1\\text{ W} = 1\\text{ J/s}$，$1\\text{ kW} = 1000\\text{ W}$）。</li></ul></div>"
+      },
+      {
+        "title": "完成最终挑战与领取学习证书",
+        "html": "<p>每座课程岛答对 <strong class=\"kw-accent\">2 题及以上</strong> 即可获得该岛岛章。集满 <strong class=\"kw-primary\">3 枚岛章</strong> 解锁中央岛最终挑战（随机抽取 5 题，答对 4 题通过）。集齐全部 <strong class=\"kw-accent\">4 枚岛章</strong> 并通过最终挑战后，即可下载或打印专属学习证书！</p>"
+      }
+    ],
+    "hint": "复习各岛的实验控制变量条件、能量转化方向以及 W=Fs、P=W/t 公式，再开始最终挑战。",
+    "points": [
+      "四节综合观测",
+      "岛章与复习",
+      "最终挑战与证书"
+    ],
+    "extra": "章节、参数、图层与播放进度",
+    "link": "",
+    "kicker": "云端的科学观测总台",
+    "color": "#e2c881",
+    "source": "第10章四座课程岛教材、练习题.pptx与补充练习.docx综合整理"
+  },
+  "rpgRules": {
+    "firstVisit": 5,
+    "firstCorrect": 10,
+    "repeatCorrect": 2,
+    "firstClear": 10,
+    "passPerIsland": "2/3",
+    "centerUnlockStamps": 3,
+    "certificateRequiresAllStamps": true,
+    "levels": [
+      0,
+      30,
+      80,
+      150,
+      250
+    ],
+    "laterLevelStep": 120
+  },
+  "residents": [],
+  "trades": [],
+  "items": [],
+  "notices": [
+    "3D浮空岛场景与动态模型为教学示意，非实际比例。",
+    "挑战题选自《练习题》与《补充练习》，部分原附图题已改写为纯文字情境题。",
+    "02 机械能实验岛内嵌了动能探究模拟器（Ek.html）与重力势能探究模拟器（Ep.html）。",
+    "背景轻音乐由浏览器 Web Audio 实时合成，无外部音频版权问题。",
+    "教材原始文件不公开提供下载。"
+  ],
+  "sources": [
+    "初二科学_第10章_能量功和功率_课程笔记.pdf",
+    "初二_下册_第10章_能量、功和功率.pdf",
+    "四座岛的内容.docx及配套图档（14张）",
+    "机械能实验岛 Ek.html 与 Ep.html 实验模拟器",
+    "00_共用/练习题.pptx 与 补充练习.docx"
+  ],
+  "editorial": [
+    "第2版更新：在各岛教材对应段落旁嵌入示意图，图文并茂。",
+    "第2版更新：02 机械能实验岛嵌入 Ek.html 与 Ep.html 实验模拟器；全面升级各岛互动实验。",
+    "第2版更新：关键字加粗变色高亮，预设字体放大至 18px，并支持四段字号自由调整。",
+    "第2版更新：内置 Web Audio 放松专注背景轻音乐（支持曲风切换与音量调节）。",
+    "第2版更新：去除分项居民与背包交易，强化每座岛的 3D 主题立体外观造型。"
+  ]
+}

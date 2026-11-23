@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <rect width="600" height="200" rx="16" fill="#fcfaf5"/>
+  <g transform="translate(25,20)">
+    <rect width="165" height="160" rx="12" fill="#fdf2e9" stroke="#d98c5f" stroke-width="2"/>
+    <circle cx="82" cy="68" r="24" fill="#e05a47"/>
+    <path d="M82 42 Q88 30 98 34" stroke="#4a7c59" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <text x="82" y="125" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#244d45">日常食物</text>
+    <text x="82" y="146" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="12" fill="#526b67">供给人体运动与生命活动</text>
+  </g>
+  <g transform="translate(217,20)">
+    <rect width="165" height="160" rx="12" fill="#f3f1ed" stroke="#8c857B" stroke-width="2"/>
+    <polygon points="52,85 68,58 98,55 114,82 95,94 60,94" fill="#434a4d"/>
+    <path d="M82 32 C92 45, 96 55, 82 68 C68 55, 72 45, 82 32 Z" fill="#e87a3c"/>
+    <text x="82" y="125" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#244d45">煤炭、汽油与柴油</text>
+    <text x="82" y="146" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="12" fill="#526b67">燃烧时化学能转化为内能</text>
+  </g>
+  <g transform="translate(410,20)">
+    <rect width="165" height="160" rx="12" fill="#eaf6f2" stroke="#5ca38f" stroke-width="2"/>
+    <rect x="52" y="45" width="60" height="42" rx="6" fill="#2f7a6b"/>
+    <rect x="112" y="56" width="7" height="20" rx="2" fill="#d9792f"/>
+    <path d="M86 53 L74 67 H85 L79 80 L93 64 H82 Z" fill="#ffd966"/>
+    <text x="82" y="125" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#244d45">蓄电池与干电池</text>
+    <text x="82" y="146" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="12" fill="#526b67">供电时化学能转化为电能</text>
+  </g>
+</svg>

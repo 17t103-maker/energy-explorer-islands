@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" width="600" height="200">
+  <rect width="600" height="200" rx="16" fill="#f5f9fc"/>
+  <g transform="translate(35,20)">
+    <rect width="245" height="160" rx="12" fill="#fff4eb" stroke="#e08b55" stroke-width="2"/>
+    <rect x="92" y="48" width="52" height="48" rx="8" fill="#d9792f"/>
+    <path d="M144 56 Q160 56 160 72 Q160 86 144 86" stroke="#244d45" stroke-width="4" fill="none"/>
+    <path d="M104 38 Q108 28 104 20 M118 38 Q122 28 118 20 M132 38 Q136 28 132 20" stroke="#e05a47" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <text x="122" y="124" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#244d45">电热水壶烧水</text>
+    <text x="122" y="146" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#b84a1c">电能 → 内能（热能）</text>
+  </g>
+  <g transform="translate(320,20)">
+    <rect width="245" height="160" rx="12" fill="#e9f6f2" stroke="#539e8a" stroke-width="2"/>
+    <rect x="65" y="58" width="82" height="28" rx="8" fill="#2f7a6b"/>
+    <circle cx="82" cy="90" r="10" fill="#243d3d"/>
+    <circle cx="130" cy="90" r="10" fill="#243d3d"/>
+    <rect x="165" y="42" width="22" height="48" rx="4" fill="#d9792f"/>
+    <path d="M147 70 Q156 70 165 62" stroke="#d9792f" stroke-width="3" fill="none"/>
+    <text x="122" y="124" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="16" font-weight="bold" fill="#244d45">电动车充电与行驶</text>
+    <text x="122" y="146" text-anchor="middle" font-family="Microsoft YaHei, sans-serif" font-size="13" fill="#1e6b58">充电：电能→化学能｜行驶：电能→机械能</text>
+  </g>
+</svg>

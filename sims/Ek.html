@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>动能探究模拟器 - 全功能版</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif; display: flex; flex-direction: column; align-items: center; background: #263238; padding: 10px; margin: 0; color: white; }
+        .container { background: #37474f; padding: 16px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); width: 100%; max-width: 1050px; border: 3px solid #546e7a; }
+        
+        .mode-selector { background: #455a64; padding: 8px 14px; border-radius: 50px; margin-bottom: 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; border: 2px solid #81d4fa; max-width: 100%; }
+        .mode-btn { padding: 8px 16px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.3s; border: none; background: #cfd8dc; color: #37474f; }
+        .mode-btn.active { background: #00e676; color: white; box-shadow: 0 0 15px rgba(0,230,118,0.5); }
+
+        h2 { text-align: center; font-size: 1.45rem; margin: 0 0 12px 0; color: #81d4fa; }
+        
+        .main-layout { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; justify-content: center; }
+        .main-layout > div:first-child { flex: 1 1 520px; min-width: 0; max-width: 100%; }
+        canvas { background: #ffffff; border: 4px solid #1a237e; border-radius: 8px; width: 100%; height: auto; display: block; }
+
+        .data-log { flex: 1 1 260px; width: 100%; background: #eceff1; border-radius: 10px; padding: 12px; color: #333; max-height: 360px; display: flex; flex-direction: column; border: 2px solid #90a4ae; }
+        .data-log h3 { margin: 0 0 10px 0; text-align: center; color: #263238; border-bottom: 2px solid #cfd8dc; }
+        .table-wrapper { flex: 1; overflow-y: auto; background: white; border-radius: 4px; min-height: 120px; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+        th, td { border: 1px solid #ddd; padding: 6px; text-align: center; }
+        th { background: #cfd8dc; position: sticky; top: 0; }
+
+        .race-panel { margin-top: 15px; display: flex; flex-direction: column; gap: 12px; }
+        .controls-row { display: flex; flex-wrap: wrap; gap: 12px; }
+        .track-ctrl { flex: 1 1 260px; background: #fdfdfd; padding: 12px; border-radius: 10px; border: 2px solid #ddd; color: #333; }
+        .track-a { border-left: 10px solid #e74c3c; }
+        .track-b { border-left: 10px solid #3498db; }
+        .disabled-ctrl { opacity: 0.15; pointer-events: none; }
+        
+        label { font-size: 0.95rem; font-weight: bold; color: #546e7a; }
+        .value-text { font-size: 1.2rem; color: #d32f2f; font-weight: 800; }
+        input[type="range"] { width: 100%; cursor: pointer; }
+
+        .center-btns { display: flex; gap: 10px; justify-content: center; margin-top: 15px; }
+        button.action-btn { flex: 1; max-width: 250px; padding: 15px; cursor: pointer; border: none; border-radius: 8px; font-weight: bold; font-size: 1.3rem; color: white; }
+        #runBtn { background: #2ecc71; box-shadow: 0 5px 0 #27ae60; }
+        #resetBtn { background: #e67e22; box-shadow: 0 5px 0 #d35400; }
+        button:disabled { opacity: 0.5; box-shadow: none; transform: translateY(3px); }
+    </style>
+</head>
+<body>
+
+<div class="mode-selector">
+    <button class="mode-btn active" id="btnSingle" onclick="switchMode('single')">🔬 单一变量探究模式</button>
+    <button class="mode-btn" id="btnRace" onclick="switchMode('race')">🏁 激情竞赛模式</button>
+</div>
+
+<div class="container">
+    <h2 id="mainTitle">实验演示</h2>
+    
+    <div class="main-layout">
+        <div>
+            <canvas id="simCanvas" width="680" height="420"></canvas>
+            <div class="center-btns">
+                <button id="runBtn" class="action-btn">释放小球 ▶</button>
+                <button id="resetBtn" class="action-btn">重置 ↺</button>
+            </div>
+        </div>
+
+        <div class="data-log" id="logPanel">
+            <h3>📊 实验数据记录</h3>
+            <div class="table-wrapper">
+                <table id="dataTable">
+                    <thead>
+                        <tr>
+                            <th>序号</th>
+                            <th>质量(g)</th>
+                            <th>高度(cm)</th>
+                            <th>位移(cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <button onclick="clearLog()" style="margin-top:10px; cursor:pointer;">清空记录</button>
+        </div>
+    </div>
+
+    <div class="race-panel">
+        <div class="controls-row">
+            <div class="track-ctrl track-a" id="panelA">
+                <div style="font-weight:bold; margin-bottom:10px; color:#e74c3c">● 赛道 A</div>
+                <div style="display:flex; gap:20px">
+                    <div style="flex:1">
+                        <label>高度 (h): <span id="hALabel" class="value-text">10</span> cm</label>
+                        <input type="range" id="hARange" min="5" max="22" step="1" value="10">
+                    </div>
+                    <div style="flex:1">
+                        <label>质量 (m): <span id="mALabel" class="value-text">50</span> g</label>
+                        <input type="range" id="mARange" min="20" max="100" step="10" value="50">
+                    </div>
+                </div>
+            </div>
+
+            <div class="track-ctrl track-b disabled-ctrl" id="panelB">
+                <div style="font-weight:bold; margin-bottom:10px; color:#3498db">● 赛道 B</div>
+                <div style="display:flex; gap:20px">
+                    <div style="flex:1">
+                        <label>高度 (h): <span id="hBLabel" class="value-text">10</span> cm</label>
+                        <input type="range" id="hBRange" min="5" max="22" step="1" value="10">
+                    </div>
+                    <div style="flex:1">
+                        <label>质量 (m): <span id="mBLabel" class="value-text">50</span> g</label>
+                        <input type="range" id="mBRange" min="20" max="100" step="10" value="50">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const canvas = document.getElementById('simCanvas');
+    const ctx = canvas.getContext('2d');
+    const CM_TO_PX = 8; 
+    const RAMP_BASE_X = 200; 
+    const BOX_START_X = 280;
+    const SLOPE = 1.2; 
+
+    let currentMode = 'single';
+    let isRacing = false;
+    let experimentCount = 0;
+
+    function createTrack(groundY, ballColor, boxColor) {
+        return {
+            groundY: groundY,
+            ball: { x: 0, y: 0, r: 10, m: 50, h: 10, vx: 0, color: ballColor, state: 'idle' },
+            box: { x: BOX_START_X, y: groundY - 40, w: 40, h: 40, dist: 0, color: boxColor }
+        };
+    }
+
+    let trackA = createTrack(180, '#e74c3c', '#ffcdd2');
+    let trackB = createTrack(380, '#3498db', '#bbdefb');
+
+    function switchMode(mode) {
+        currentMode = mode;
+        document.getElementById('btnSingle').classList.toggle('active', mode === 'single');
+        document.getElementById('btnRace').classList.toggle('active', mode === 'race');
+        document.getElementById('panelB').classList.toggle('disabled-ctrl', mode === 'single');
+        document.getElementById('logPanel').style.display = mode === 'single' ? 'flex' : 'none';
+        document.getElementById('mainTitle').innerText = mode === 'single' ? '🔬 单一变量探究实验' : '🏁 激情赛马对比挑战';
+        initAll();
+    }
+
+    function drawTrack(t, isActive) {
+        if (!isActive) return;
+        const gY = t.groundY;
+        const drawR = t.ball.r + (t.ball.m/22);
+
+        // 1. 地面
+        ctx.strokeStyle = '#263238'; ctx.lineWidth = 2;
+        ctx.beginPath(); ctx.moveTo(0, gY); ctx.lineTo(canvas.width, gY); ctx.stroke();
+
+        // 2. 动态斜坡 (起点严格对齐球心)
+        let rSX = RAMP_BASE_X - (t.ball.h * CM_TO_PX / SLOPE);
+        let rSY = gY - (t.ball.h * CM_TO_PX);
+        ctx.strokeStyle = '#90a4ae'; ctx.lineWidth = 5;
+        ctx.beginPath(); ctx.moveTo(rSX, rSY); ctx.lineTo(RAMP_BASE_X, gY); ctx.stroke();
+
+        // 3. 0cm 标线 (核心要求)
+        ctx.setLineDash([4, 4]); ctx.strokeStyle = '#999';
+        ctx.beginPath(); ctx.moveTo(BOX_START_X, gY); ctx.lineTo(BOX_START_X, gY + 15); ctx.stroke();
+        ctx.setLineDash([]); ctx.fillStyle = '#666'; ctx.font = "12px Arial";
+        ctx.fillText("0cm", BOX_START_X - 10, gY + 28);
+
+        // 4. 高度显示 (释放前)
+        if(t.ball.state === 'idle') {
+            ctx.strokeStyle = '#FFD600'; ctx.lineWidth = 2;
+            ctx.beginPath(); ctx.moveTo(t.ball.x, t.ball.y); ctx.lineTo(t.ball.x, gY); ctx.stroke();
+            ctx.fillStyle = '#d32f2f'; ctx.font = "bold 14px Arial";
+            ctx.fillText(`h=${t.ball.h}cm`, t.ball.x + 8, t.ball.y + (gY - t.ball.y)/2);
+        }
+
+        // 5. 纸盒
+        ctx.fillStyle = t.box.color; ctx.fillRect(t.box.x, t.box.y, t.box.w, t.box.h);
+        ctx.strokeStyle = '#5d4037'; ctx.lineWidth = 1; ctx.strokeRect(t.box.x, t.box.y, t.box.w, t.box.h);
+
+        // 6. 结果显示
+        if(t.ball.state === 'finished') {
+            ctx.fillStyle = t.ball.color; ctx.font = "bold 20px Arial";
+            ctx.fillText(`s = ${t.box.dist.toFixed(1)} cm`, t.box.x, gY - 45);
+        }
+
+        // 7. 小球
+        ctx.beginPath(); ctx.arc(t.ball.x, t.ball.y, drawR, 0, Math.PI*2);
+        ctx.fillStyle = t.ball.color; ctx.fill(); ctx.strokeStyle = '#000'; ctx.stroke();
+    }
+
+    function update() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawTrack(trackA, true);
+        drawTrack(trackB, currentMode === 'race');
+
+        if(isRacing) {
+            let activeTracks = currentMode === 'single' ? [trackA] : [trackA, trackB];
+            activeTracks.forEach(t => {
+                let b = t.ball;
+                let drawR = b.r + (b.m/22);
+                if(b.x < RAMP_BASE_X) {
+                    b.vx += 0.15; b.x += b.vx;
+                    b.y = t.groundY - (RAMP_BASE_X - b.x) * SLOPE - drawR;
+                } else if(b.x < t.box.x - drawR) {
+                    b.x += b.vx; b.y = t.groundY - drawR;
+                } else {
+                    let targetX = BOX_START_X + (0.45 * b.m * b.vx * b.vx / 8);
+                    if(t.box.x < targetX) { t.box.x += 3.5; b.x += 3.5; t.box.dist = (t.box.x - BOX_START_X)/CM_TO_PX; }
+                    else if(b.state !== 'finished') {
+                        b.state = 'finished';
+                        if(currentMode === 'single') recordData(b.m, b.h, t.box.dist);
+                    }
+                }
+            });
+            if(activeTracks.every(t => t.ball.state === 'finished')) isRacing = false;
+        }
+        requestAnimationFrame(update);
+    }
+
+    function recordData(m, h, s) {
+        experimentCount++;
+        const tbody = document.querySelector('#dataTable tbody');
+        const row = tbody.insertRow(0);
+        row.innerHTML = `<td>${experimentCount}</td><td>${m}</td><td>${h}</td><td style="color:#d32f2f; font-weight:bold">${s.toFixed(1)}</td>`;
+    }
+
+    function clearLog() { document.querySelector('#dataTable tbody').innerHTML = ''; experimentCount = 0; }
+
+    function sync(t, hId, mId) {
+        t.ball.h = parseInt(document.getElementById(hId).value);
+        t.ball.m = parseInt(document.getElementById(mId).value);
+        let drawR = t.ball.r + (t.ball.m/22);
+        t.ball.x = RAMP_BASE_X - (t.ball.h * CM_TO_PX / SLOPE);
+        t.ball.y = t.groundY - (t.ball.h * CM_TO_PX) - drawR;
+        t.ball.vx = 0; t.ball.state = 'idle';
+        t.box.x = BOX_START_X; t.box.dist = 0;
+    }
+
+    function initAll() {
+        sync(trackA, 'hARange', 'mARange');
+        sync(trackB, 'hBRange', 'mBRange');
+        document.getElementById('runBtn').disabled = false;
+    }
+
+    document.getElementById('hARange').oninput = function(){ document.getElementById('hALabel').innerText = this.value; initAll(); };
+    document.getElementById('mARange').oninput = function(){ document.getElementById('mALabel').innerText = this.value; initAll(); };
+    document.getElementById('hBRange').oninput = function(){ document.getElementById('hBLabel').innerText = this.value; initAll(); };
+    document.getElementById('mBRange').oninput = function(){ document.getElementById('mBLabel').innerText = this.value; initAll(); };
+    document.getElementById('runBtn').onclick = function(){ isRacing = true; this.disabled = true; };
+    document.getElementById('resetBtn').onclick = initAll;
+
+    switchMode('single');
+    update();
+</script>
+</body>
+</html>
